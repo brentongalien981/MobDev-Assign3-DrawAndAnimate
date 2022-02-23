@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
                 android.R.layout.simple_list_item_1,
                 exercises);
 
-        // Bind the list view with array adapter
+        // Bind the listview with array adapter
         ListView listView = findViewById(R.id.list);
         listView.setAdapter(adapter);
 
