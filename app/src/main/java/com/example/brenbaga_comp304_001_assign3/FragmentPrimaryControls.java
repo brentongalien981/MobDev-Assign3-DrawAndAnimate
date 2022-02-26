@@ -9,7 +9,9 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ImageButton;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 
@@ -17,12 +19,10 @@ public class FragmentPrimaryControls extends Fragment {
 
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_primary_controls, container, false);
     }
-
 
 
     @Override
@@ -39,5 +39,27 @@ public class FragmentPrimaryControls extends Fragment {
         greenBtn.setImageResource(R.drawable.green_rect);
         blueBtn.setImageResource(R.drawable.blue_rect);
 
+
+        this.setPaintThicknessSpinner();
+
+    }
+
+
+    private void setPaintThicknessSpinner() {
+
+        Spinner spinner = getActivity().findViewById(R.id.paintThicknessSpinner);
+
+        // Set event-handler.
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                LineDrawingActivity.getMyInstance().setPaintStrokeWidth(i);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
     }
 }

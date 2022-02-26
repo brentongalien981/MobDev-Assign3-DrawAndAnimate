@@ -41,7 +41,7 @@ public class FragmentSecondaryControls extends Fragment {
         rightBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                LineDrawingActivity.drawLine("right");
+                LineDrawingActivity.getMyInstance().drawLine("right");
             }
         });
 

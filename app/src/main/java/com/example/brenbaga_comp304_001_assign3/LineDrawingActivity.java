@@ -3,6 +3,7 @@ package com.example.brenbaga_comp304_001_assign3;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -15,29 +16,42 @@ import android.widget.ImageView;
 
 public class LineDrawingActivity extends AppCompatActivity {
 
-    private static Bitmap bitmap;
-    private static Canvas canvas;
-    private static ImageView theImageView;
-    private static Paint paint;
+    private static final int DEFAULT_PAINT_WIDTH = 5;
 
-    private static int startX = 10;
-    private static int startY = 10;
-    private static int endX = 10;
-    private static int endY = 10;
+    private Bitmap bitmap;
+    private Canvas canvas;
+    private ImageView theImageView;
+    private Paint paint;
+
+    private int startX = 10;
+    private int startY = 10;
+    private int endX = 10;
+    private int endY = 10;
+
+    private static Context context;
+    private boolean hasTheCanvasSizeBeenSet = false;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_line_drawing);
+
+        // Reference the context of this class.
+        context = this;
     }
 
 
 
+    /**
+     * Set the drawing-objects in this method to have
+     * the rendered dimensions of the image-view.
+     */
     @Override
     public void onWindowFocusChanged(boolean hasFocus) {
         super.onWindowFocusChanged(hasFocus);
 
+        if (hasTheCanvasSizeBeenSet) { return; }
 
         theImageView = (ImageView) findViewById(R.id.theImageView);
 
@@ -60,12 +74,14 @@ public class LineDrawingActivity extends AppCompatActivity {
         // Set the paint.
         paint = new Paint();
         paint.setColor(Color.MAGENTA);
-        paint.setStrokeWidth(30);
+        paint.setStrokeWidth(DEFAULT_PAINT_WIDTH);
+
+        hasTheCanvasSizeBeenSet = true;
     }
 
 
 
-    public static void drawLine(String direction) {
+    public void drawLine(String direction) {
 
         switch (direction) {
             case "up":
@@ -89,5 +105,28 @@ public class LineDrawingActivity extends AppCompatActivity {
         startX = endX;
         startY = endY;
 
+    }
+
+
+
+    public void setPaintStrokeWidth(int thicknessArrayIndex) {
+
+        if (!hasTheCanvasSizeBeenSet) { return; }
+
+        String[] widths = getResources().getStringArray(R.array.paintThickness);
+        int width = Integer.valueOf(widths[thicknessArrayIndex]);
+        paint.setStrokeWidth(width);
+    }
+
+
+
+    public static Context getMyContext() {
+        return context;
+    }
+
+
+
+    public static LineDrawingActivity getMyInstance() {
+        return (LineDrawingActivity) context;
     }
 }
