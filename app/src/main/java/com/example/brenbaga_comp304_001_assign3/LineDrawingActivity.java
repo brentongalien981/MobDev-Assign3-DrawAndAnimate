@@ -81,27 +81,35 @@ public class LineDrawingActivity extends AppCompatActivity {
 
 
 
+    public void clearCanvas(View v) {
+        canvas.drawColor(Color.BLACK);
+        startX = 10;
+        startY = 10;
+        endX = 10;
+        endY = 10;
+    }
+
+
+
     public void drawLine(String direction) {
 
         switch (direction) {
             case "up":
+                endY -= 5;
                 break;
             case "right":
                 endX += 5;
                 break;
             case "down":
+                endY += 5;
                 break;
             case "left":
+                endX -= 5;
                 break;
         }
 
-        // TODO: Delete later.
-        Log.w("CeC-Assign3", "startX ==> " + startX);
-        Log.w("CeC-Assign3", "startY ==> " + startY);
-        Log.w("CeC-Assign3", "endX ==> " + endX);
-        Log.w("CeC-Assign3", "endY ==> " + endY);
-
         canvas.drawLine(startX, startY, endX, endY, paint);
+;
         startX = endX;
         startY = endY;
 
