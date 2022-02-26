@@ -10,6 +10,7 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -109,9 +110,47 @@ public class LineDrawingActivity extends AppCompatActivity {
         }
 
         canvas.drawLine(startX, startY, endX, endY, paint);
-;
         startX = endX;
         startY = endY;
+
+    }
+
+
+
+
+
+
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+
+        String direction = "";
+
+        switch (keyCode) {
+            case KeyEvent.KEYCODE_DPAD_UP:
+                direction = "up";
+                break;
+            case KeyEvent.KEYCODE_DPAD_RIGHT:
+                direction = "right";
+                break;
+            case KeyEvent.KEYCODE_DPAD_DOWN:
+                direction = "down";
+                break;
+            case KeyEvent.KEYCODE_DPAD_LEFT:
+                direction = "left";
+                break;
+        }
+
+
+        if (direction.isEmpty()) {
+            return false;
+        }
+
+
+        // If it's a valid arrow press, then draw.
+        theImageView.setFocusable(true);
+        theImageView.requestFocus();
+        drawLine(direction);
+        theImageView.invalidate();
+        return true;
 
     }
 

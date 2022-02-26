@@ -41,6 +41,7 @@ public class FragmentPrimaryControls extends Fragment {
 
     private void setColorBtns() {
 
+        // Reference the btns.
         ImageButton redBtn = getActivity().findViewById(R.id.redImageBtn);
         ImageButton greenBtn = getActivity().findViewById(R.id.greenImageBtn);
         ImageButton blueBtn = getActivity().findViewById(R.id.blueImageBtn);
