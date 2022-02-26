@@ -1,5 +1,6 @@
 package com.example.brenbaga_comp304_001_assign3;
 
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -30,7 +31,16 @@ public class FragmentPrimaryControls extends Fragment {
 
         super.onViewCreated(view, savedInstanceState);
 
-        // Set the colorBtns.
+        // Set the controls.
+        this.setColorBtns();
+        this.setPaintThicknessSpinner();
+
+    }
+
+
+
+    private void setColorBtns() {
+
         ImageButton redBtn = getActivity().findViewById(R.id.redImageBtn);
         ImageButton greenBtn = getActivity().findViewById(R.id.greenImageBtn);
         ImageButton blueBtn = getActivity().findViewById(R.id.blueImageBtn);
@@ -40,7 +50,27 @@ public class FragmentPrimaryControls extends Fragment {
         blueBtn.setImageResource(R.drawable.blue_rect);
 
 
-        this.setPaintThicknessSpinner();
+        // Set event-handlers.
+        redBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                LineDrawingActivity.getMyInstance().setPainColor(Color.RED);
+            }
+        });
+
+        greenBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                LineDrawingActivity.getMyInstance().setPainColor(Color.GREEN);
+            }
+        });
+
+        blueBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                LineDrawingActivity.getMyInstance().setPainColor(Color.BLUE);
+            }
+        });
 
     }
 

@@ -63,7 +63,7 @@ public class LineDrawingActivity extends AppCompatActivity {
         // Set the canvas.
         canvas = new Canvas(bitmap);
         // Background color.
-        canvas.drawColor(Color.CYAN);
+        canvas.drawColor(Color.BLACK);
 
 
         // Set the imageView.
@@ -73,7 +73,7 @@ public class LineDrawingActivity extends AppCompatActivity {
 
         // Set the paint.
         paint = new Paint();
-        paint.setColor(Color.MAGENTA);
+        paint.setColor(Color.RED);
         paint.setStrokeWidth(DEFAULT_PAINT_WIDTH);
 
         hasTheCanvasSizeBeenSet = true;
@@ -116,6 +116,12 @@ public class LineDrawingActivity extends AppCompatActivity {
         String[] widths = getResources().getStringArray(R.array.paintThickness);
         int width = Integer.valueOf(widths[thicknessArrayIndex]);
         paint.setStrokeWidth(width);
+    }
+
+
+
+    public void setPainColor(int colorInt) {
+        paint.setColor(colorInt);
     }
 
 
