@@ -43,7 +43,6 @@ public class LineDrawingActivity extends AppCompatActivity {
     }
 
 
-
     /**
      * Set the drawing-objects in this method to have
      * the rendered dimensions of the image-view.
@@ -52,7 +51,9 @@ public class LineDrawingActivity extends AppCompatActivity {
     public void onWindowFocusChanged(boolean hasFocus) {
         super.onWindowFocusChanged(hasFocus);
 
-        if (hasTheCanvasSizeBeenSet) { return; }
+        if (hasTheCanvasSizeBeenSet) {
+            return;
+        }
 
         theImageView = (ImageView) findViewById(R.id.theImageView);
 
@@ -81,7 +82,6 @@ public class LineDrawingActivity extends AppCompatActivity {
     }
 
 
-
     public void clearCanvas(View v) {
         canvas.drawColor(Color.BLACK);
         startX = 10;
@@ -89,7 +89,6 @@ public class LineDrawingActivity extends AppCompatActivity {
         endX = 10;
         endY = 10;
     }
-
 
 
     public void drawLine(String direction) {
@@ -114,10 +113,6 @@ public class LineDrawingActivity extends AppCompatActivity {
         startY = endY;
 
     }
-
-
-
-
 
 
     public boolean onKeyDown(int keyCode, KeyEvent event) {
@@ -155,10 +150,11 @@ public class LineDrawingActivity extends AppCompatActivity {
     }
 
 
-
     public void setPaintStrokeWidth(int thicknessArrayIndex) {
 
-        if (!hasTheCanvasSizeBeenSet) { return; }
+        if (!hasTheCanvasSizeBeenSet) {
+            return;
+        }
 
         String[] widths = getResources().getStringArray(R.array.paintThickness);
         int width = Integer.valueOf(widths[thicknessArrayIndex]);
@@ -166,17 +162,14 @@ public class LineDrawingActivity extends AppCompatActivity {
     }
 
 
-
     public void setPainColor(int colorInt) {
         paint.setColor(colorInt);
     }
 
 
-
     public static Context getMyContext() {
         return context;
     }
-
 
 
     public static LineDrawingActivity getMyInstance() {

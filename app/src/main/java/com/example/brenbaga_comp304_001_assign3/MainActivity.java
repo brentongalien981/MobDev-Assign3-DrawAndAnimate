@@ -46,6 +46,9 @@ public class MainActivity extends AppCompatActivity {
                     case 0:
                         theClass = LineDrawingActivity.class;
                         break;
+                    case 1:
+                        theClass = MyFramedAnimationActivity.class;
+                        break;
                     default:
                         return;
                 }
