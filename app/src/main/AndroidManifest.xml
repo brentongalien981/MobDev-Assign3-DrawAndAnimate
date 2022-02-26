@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BrenBaga_COMP304001_Assign3">
         <activity
+            android:name=".MyTweenAnimation"
+            android:exported="false" />
+        <activity
             android:name=".MyFramedAnimationActivity"
             android:exported="false" />
         <activity

@@ -49,8 +49,9 @@ public class MainActivity extends AppCompatActivity {
                     case 1:
                         theClass = MyFramedAnimationActivity.class;
                         break;
-                    default:
-                        return;
+                    case 2:
+                        theClass = MyTweenAnimation.class;
+                        break;
                 }
 
                 Intent myIntent = new Intent(MainActivity.this, theClass);
