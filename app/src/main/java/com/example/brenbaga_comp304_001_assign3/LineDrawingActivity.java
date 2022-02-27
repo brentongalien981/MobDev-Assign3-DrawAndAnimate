@@ -93,6 +93,7 @@ public class LineDrawingActivity extends AppCompatActivity {
 
     public void drawLine(String direction) {
 
+        // Update the coordinate.
         switch (direction) {
             case "up":
                 endY -= 5;
@@ -117,6 +118,7 @@ public class LineDrawingActivity extends AppCompatActivity {
 
     public boolean onKeyDown(int keyCode, KeyEvent event) {
 
+        // Check for when a direction keyboard-key is pressed.
         String direction = "";
 
         switch (keyCode) {

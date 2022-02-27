@@ -36,12 +36,14 @@ public class FragmentSecondaryControls extends Fragment {
 
     private void setDirectionBtnsEventHandlers() {
 
+        // Reference the direction-btns.
         ImageButton rightBtn = (ImageButton) getActivity().findViewById(R.id.rightImageButton);
         ImageButton downBtn = (ImageButton) getActivity().findViewById(R.id.downImageButton);
         ImageButton leftBtn = (ImageButton) getActivity().findViewById(R.id.leftImageButton);
         ImageButton upBtn = (ImageButton) getActivity().findViewById(R.id.upImageButton);
 
 
+        /* Set the direction-btns' event-handlers. */
         rightBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

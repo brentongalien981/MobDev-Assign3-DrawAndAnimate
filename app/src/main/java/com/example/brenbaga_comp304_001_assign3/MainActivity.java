@@ -40,21 +40,21 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
-                Class theClass = null;
+                Intent myIntent = null;
 
                 switch (i) {
                     case 0:
-                        theClass = LineDrawingActivity.class;
+                        myIntent = new Intent(MainActivity.this, LineDrawingActivity.class);
                         break;
                     case 1:
-                        theClass = MyFramedAnimationActivity.class;
+                        myIntent = new Intent(MainActivity.this, MyFramedAnimationActivity.class);
                         break;
                     case 2:
-                        theClass = MyTweenAnimation.class;
+                        myIntent = new Intent(MainActivity.this, MyTweenAnimation.class);
                         break;
                 }
 
-                Intent myIntent = new Intent(MainActivity.this, theClass);
+                // Start the selected activity.
                 startActivity(myIntent);
             }
         });
