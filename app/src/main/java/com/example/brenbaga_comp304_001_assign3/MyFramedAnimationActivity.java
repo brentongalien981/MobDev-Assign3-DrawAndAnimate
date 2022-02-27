@@ -43,19 +43,20 @@ public class MyFramedAnimationActivity extends AppCompatActivity {
     }
 
 
-
     private void startAnimation() {
 
         ImageView theImageView = (ImageView) findViewById(R.id.theImageView);
 
-        BitmapDrawable frame1 = (BitmapDrawable) getResources().getDrawable(R.drawable.boy1);
-        BitmapDrawable frame2 = (BitmapDrawable) getResources().getDrawable(R.drawable.boy2);
-        BitmapDrawable frame3 = (BitmapDrawable) getResources().getDrawable(R.drawable.boy3);
-        BitmapDrawable frame4 = (BitmapDrawable) getResources().getDrawable(R.drawable.boy4);
-        BitmapDrawable frame5 = (BitmapDrawable) getResources().getDrawable(R.drawable.boy5);
-        BitmapDrawable frame6 = (BitmapDrawable) getResources().getDrawable(R.drawable.boy6);
+        BitmapDrawable frame1 = (BitmapDrawable) getResources().getDrawable(R.drawable.panther1);
+        BitmapDrawable frame2 = (BitmapDrawable) getResources().getDrawable(R.drawable.panther2);
+        BitmapDrawable frame3 = (BitmapDrawable) getResources().getDrawable(R.drawable.panther3);
+        BitmapDrawable frame4 = (BitmapDrawable) getResources().getDrawable(R.drawable.panther4);
+        BitmapDrawable frame5 = (BitmapDrawable) getResources().getDrawable(R.drawable.panther5);
+        BitmapDrawable frame6 = (BitmapDrawable) getResources().getDrawable(R.drawable.panther6);
+        BitmapDrawable frame7 = (BitmapDrawable) getResources().getDrawable(R.drawable.panther7);
+        BitmapDrawable frame8 = (BitmapDrawable) getResources().getDrawable(R.drawable.panther8);
 
-        
+
         // Get the background, which has been compiled to an AnimationDrawable object.
         mframeAnimation = new AnimationDrawable();
         mframeAnimation.setOneShot(false);    // loop continuously
@@ -65,21 +66,18 @@ public class MyFramedAnimationActivity extends AppCompatActivity {
         mframeAnimation.addFrame(frame4, DURATION_BETWEEN_FRAMES);
         mframeAnimation.addFrame(frame5, DURATION_BETWEEN_FRAMES);
         mframeAnimation.addFrame(frame6, DURATION_BETWEEN_FRAMES);
-        mframeAnimation.addFrame(frame6, DURATION_BETWEEN_FRAMES);
-        mframeAnimation.addFrame(frame6, DURATION_BETWEEN_FRAMES);
+        mframeAnimation.addFrame(frame7, DURATION_BETWEEN_FRAMES);
+        mframeAnimation.addFrame(frame8, DURATION_BETWEEN_FRAMES);
 
         theImageView.setBackground(mframeAnimation);
 
         mframeAnimation.setVisible(true, true);
         mframeAnimation.start();
-
-        Log.w("CeC-Ex3", "insided startAnimation()");
     }
+
 
     private void stopAnimation() {
         mframeAnimation.stop();
         mframeAnimation.setVisible(false, false);
-
-        Log.w("CeC-Ex3", "insided stopAnimation()");
     }
 }
