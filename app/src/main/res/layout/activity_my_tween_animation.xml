@@ -4,13 +4,46 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#444"
+    android:background="@drawable/outer_space2"
     tools:context=".MyTweenAnimation">
 
     <ImageView
+        android:id="@+id/theJupiterImageView"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/jupiter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:translationX="-50dp"
+        android:translationY="-50dp" />
+
+    <ImageView
+        android:id="@+id/theEarthImageView"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:src="@drawable/earth"
+        android:layout_marginStart="200dp"
+        android:layout_marginTop="500dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
         android:id="@+id/theAsteroidImageView"
-        android:layout_width="100px"
-        android:layout_height="100px"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:translationX="-20dp"
+        android:translationY="-20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/explosionImageView"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:src="@drawable/explosion"
+        android:layout_marginStart="250dp"
+        android:layout_marginTop="540dp"
+        android:visibility="invisible"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -21,14 +54,6 @@
         android:text="start"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/stopBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="stop"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@id/startBtn" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

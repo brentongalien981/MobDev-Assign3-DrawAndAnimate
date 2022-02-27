@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <set xmlns:android="http://schemas.android.com/apk/res/android"
-    android:shareInterpolator="false">
+    android:interpolator="@android:anim/accelerate_interpolator">
 
     <translate
-        android:duration="2500"
+        android:duration="5000"
         android:fillAfter="true"
-        android:toXDelta="500"
+        android:toXDelta="420"
         android:toYDelta="800" />
 
     <scale
@@ -14,7 +14,13 @@
         android:fromYScale="1.0"
         android:pivotX="50%"
         android:pivotY="50%"
-        android:toXScale="3.0"
-        android:toYScale="3.0" />
+        android:toXScale="2.0"
+        android:toYScale="2.0" />
+
+    <alpha
+        android:duration="10"
+        android:fromAlpha="1.0"
+        android:startOffset="5000"
+        android:toAlpha="0.0" />
 
 </set>

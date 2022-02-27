@@ -18,33 +18,27 @@ public class MyTweenAnimation extends AppCompatActivity {
         setContentView(R.layout.activity_my_tween_animation);
 
 
-        // Handle zzz.
+        // Start animations.
         final Button startBtn = (Button) findViewById(R.id.startBtn);
         startBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                performAnimation(R.anim.asteroid_rotate);
-            }
-        });
-
-
-        // Handle zzz
-        final Button stopBtn = (Button) findViewById(R.id.stopBtn);
-        stopBtn.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                performAnimation(R.anim.asteroid);
+                performAnimation(R.drawable.jupiter, R.id.theJupiterImageView, R.anim.jupiter);
+                performAnimation(R.drawable.asteroid3, R.id.theAsteroidImageView, R.anim.asteroid);
+                performAnimation(R.drawable.earth, R.id.theEarthImageView, R.anim.earth);
+                performAnimation(R.drawable.explosion, R.id.explosionImageView, R.anim.explosion);
             }
         });
     }
 
 
-    private void performAnimation(int animationResourceID) {
+    private void performAnimation(int imageResourceId, int viewId, int animationResourceID) {
 
-        // We will animate the imageview
-        ImageView reusableImageView = (ImageView) findViewById(R.id.theAsteroidImageView);
-        reusableImageView.setImageResource(R.drawable.asteroid3);
+        // We will animate the imageview.
+        ImageView reusableImageView = (ImageView) findViewById(viewId);
+        reusableImageView.setImageResource(imageResourceId);
         reusableImageView.setVisibility(View.VISIBLE);
 
-        // Load the appropriate animation
+        // Load the appropriate animation.
         Animation an = AnimationUtils.loadAnimation(this, animationResourceID);
 
         // Register a listener, so we can disable and re-enable buttons
@@ -56,13 +50,10 @@ public class MyTweenAnimation extends AppCompatActivity {
     }
 
 
-    private void toggleButtons(boolean clickableState) {
+    private void toggleButton(boolean clickableState) {
 
         final Button startBtn = (Button) findViewById(R.id.startBtn);
         startBtn.setClickable(clickableState);
-
-        final Button stopBtn = (Button) findViewById(R.id.stopBtn);
-        stopBtn.setClickable(clickableState);
 
     }
 
@@ -71,24 +62,24 @@ public class MyTweenAnimation extends AppCompatActivity {
 
         public void onAnimationEnd(Animation animation) {
 
-            // Hide our ImageView
-            ImageView reusableImageView = (ImageView) findViewById(R.id.theAsteroidImageView);
-//            reusableImageView.setVisibility(View.INVISIBLE);
+            // Hide explosion-image-view after animation.
+            ImageView explosionImageView = (ImageView) findViewById(R.id.explosionImageView);
+            explosionImageView.setVisibility(View.INVISIBLE);
 
-            // Enable all buttons once animation is over
-            toggleButtons(true);
+            // Enable button once animation is over.
+            toggleButton(true);
 
         }
 
 
         public void onAnimationRepeat(Animation animation) {
-            Log.w("CeC-Assign3", "In METHOD: onAnimationRepeat()");
+
         }
 
 
         public void onAnimationStart(Animation animation) {
-            // Disable all buttons while animation is running
-            toggleButtons(false);
+            // Disable button while animation is running
+            toggleButton(false);
         }
 
     }
