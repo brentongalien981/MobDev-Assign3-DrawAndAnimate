@@ -17,9 +17,9 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/theImageView"
-            android:layout_width="500dp"
-            android:layout_height="231dp"
+            android:id="@+id/framedAnimationImageView"
+            android:layout_width="@dimen/framedAnimationImageViewWidth"
+            android:layout_height="@dimen/framedAnimationImageViewHeight"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -43,6 +43,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:layout_margin="@dimen/generalBtnMargin"
             android:text="Start" />
 
         <Button
@@ -50,6 +51,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:layout_margin="@dimen/generalBtnMargin"
             android:text="Stop" />
 
     </LinearLayout>

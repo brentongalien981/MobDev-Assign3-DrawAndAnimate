@@ -45,7 +45,7 @@ public class MyFramedAnimationActivity extends AppCompatActivity {
 
     private void startAnimation() {
 
-        ImageView theImageView = (ImageView) findViewById(R.id.theImageView);
+        ImageView theImageView = (ImageView) findViewById(R.id.framedAnimationImageView);
 
         BitmapDrawable frame1 = (BitmapDrawable) getResources().getDrawable(R.drawable.panther1);
         BitmapDrawable frame2 = (BitmapDrawable) getResources().getDrawable(R.drawable.panther2);

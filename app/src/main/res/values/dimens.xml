@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Ex2 -->
+    <dimen name="framedAnimationImageViewWidth">500dp</dimen>
+    <dimen name="framedAnimationImageViewHeight">231dp</dimen>
+
+
+    <!-- Ex3 -->
+    <dimen name="jupiterImageViewDimension">150dp</dimen>
+    <dimen name="jupiterImageViewTranslation">-50dp</dimen>
+
+    <dimen name="earthImageViewDimension">300dp</dimen>
+    <dimen name="earthImageViewTranslationX">200dp</dimen>
+    <dimen name="earthImageViewTranslationY">500dp</dimen>
+
+    <dimen name="asteroidImageViewDimension">20dp</dimen>
+    <dimen name="asteroidImageViewTranslation">-20dp</dimen>
+
+    <dimen name="explosionImageViewWidth">100dp</dimen>
+    <dimen name="explosionImageViewHeight">50dp</dimen>
+    <dimen name="explosionImageViewTranslationX">250dp</dimen>
+    <dimen name="explosionImageViewTranslationY">540dp</dimen>
+
+
+    <!-- General -->
+    <dimen name="generalLayoutMargin">20dp</dimen>
+    <dimen name="generalBtnMargin">20dp</dimen>
+</resources>

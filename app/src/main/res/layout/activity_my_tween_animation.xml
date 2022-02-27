@@ -9,40 +9,40 @@
 
     <ImageView
         android:id="@+id/theJupiterImageView"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="@dimen/jupiterImageViewDimension"
+        android:layout_height="@dimen/jupiterImageViewDimension"
         android:src="@drawable/jupiter"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:translationX="-50dp"
-        android:translationY="-50dp" />
+        android:translationX="@dimen/jupiterImageViewTranslation"
+        android:translationY="@dimen/jupiterImageViewTranslation" />
 
     <ImageView
         android:id="@+id/theEarthImageView"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
+        android:layout_width="@dimen/earthImageViewDimension"
+        android:layout_height="@dimen/earthImageViewDimension"
         android:src="@drawable/earth"
-        android:layout_marginStart="200dp"
-        android:layout_marginTop="500dp"
+        android:layout_marginStart="@dimen/earthImageViewTranslationX"
+        android:layout_marginTop="@dimen/earthImageViewTranslationY"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/theAsteroidImageView"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:translationX="-20dp"
-        android:translationY="-20dp"
+        android:layout_width="@dimen/asteroidImageViewDimension"
+        android:layout_height="@dimen/asteroidImageViewDimension"
+        android:translationX="@dimen/asteroidImageViewTranslation"
+        android:translationY="@dimen/asteroidImageViewTranslation"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/explosionImageView"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
+        android:layout_width="@dimen/explosionImageViewWidth"
+        android:layout_height="@dimen/explosionImageViewHeight"
         android:src="@drawable/explosion"
-        android:layout_marginStart="250dp"
-        android:layout_marginTop="540dp"
+        android:layout_marginStart="@dimen/explosionImageViewTranslationX"
+        android:layout_marginTop="@dimen/explosionImageViewTranslationY"
         android:visibility="invisible"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -52,6 +52,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="start"
+        android:layout_margin="@dimen/generalBtnMargin"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 

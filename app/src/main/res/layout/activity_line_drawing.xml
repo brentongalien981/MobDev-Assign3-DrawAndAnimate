@@ -14,7 +14,8 @@
         android:name="com.example.brenbaga_comp304_001_assign3.FragmentPrimaryControls"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.1" />
+        android:layout_weight="0.1"
+        android:layout_margin="@dimen/generalLayoutMargin" />
 
     <ImageView
         android:id="@+id/theImageView"
@@ -28,7 +29,8 @@
         android:name="com.example.brenbaga_comp304_001_assign3.FragmentSecondaryControls"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.3" />
+        android:layout_weight="0.3"
+        android:layout_margin="@dimen/generalLayoutMargin" />
 
 
 </LinearLayout>
